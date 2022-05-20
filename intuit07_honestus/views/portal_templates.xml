@@ -1,0 +1,14 @@
+<odoo>
+    <data>
+        <template id="intuit07_honestus_inherit_portal_details" inherit_id="portal.portal_my_details">
+            <xpath expr="//div[@class='clearfix'][2]" position="after">
+                <div t-attf-class="form-group #{error.get('mobile') and 'o_has_error' or ''} col-xl-6">
+                    <label class="col-form-label" for="mobile">Mobile</label>
+                    <input type="tel" name="mobile"
+                           t-attf-class="form-control #{error.get('mobile') and 'is-invalid' or ''}"
+                           t-att-value="mobile or partner.mobile"/>
+                </div>
+            </xpath>
+        </template>
+    </data>
+</odoo>

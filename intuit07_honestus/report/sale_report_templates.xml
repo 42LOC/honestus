@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_saleorder_document_inherit_intuit07_honestus" inherit_id="sale.report_saleorder_document">
+        <xpath expr="//span[@t-field='line.price_unit']" position="replace">
+            <span t-if="not line.honestus_price" t-field="line.price_unit"/>
+            <span t-if="line.honestus_price" t-field="line.honestus_price"/>
+        </xpath>
+        <xpath expr="//span[@t-field='line.name'][1]" position="replace">
+            <span t-field="line.honestus_name"/>
+        </xpath>
+    </template>
+</odoo>

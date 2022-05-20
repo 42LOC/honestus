@@ -1,0 +1,14 @@
+<odoo>
+    <data>
+        <template id="intuit07_honestus_inherit_auth_signup_fields" inherit_id='auth_signup.fields'
+                  name="Sign up - List">
+            <xpath expr="//div[@class='form-group field-name'][1]" position="after">
+                <div class="form-group field-mobile_phone">
+                    <label for="mobile_phone">Mobile</label>
+                    <input type="text" name="mobile_phone" id="mobile_phone" class="form-control form-control-sm"
+                           required="required" placeholder="+380990000000"/>
+                </div>
+            </xpath>
+        </template>
+    </data>
+</odoo>

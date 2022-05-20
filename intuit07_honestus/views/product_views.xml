@@ -1,0 +1,26 @@
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="intuit07_honestus_product_normal_form_view_inherit">
+            <field name="name">intuit07.honestus.product.normal.form.view.inherit</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_normal_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='default_code']" position="after">
+                    <field name="honestus_code" attrs="{'required': [('default_code', '!=', False)]}"/>
+                </xpath>
+
+                <xpath expr="//div[@name='standard_price_uom']" position="after">
+                    <label for="honestus_price" groups="base.group_user" attrs="{ 'invisible': [('is_product_variant', '=', False)]}"/>
+                    <div name="honestus_price" groups="base.group_user"
+                         attrs="{'invisible': [('product_variant_count', '&gt;', 1), ('is_product_variant', '=', False)]}"
+                         class="o_row">
+                        <field name="honestus_price" widget='monetary'
+                               options="{'currency_field': 'cost_currency_id', 'field_digits': True}"/>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>
