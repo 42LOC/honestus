@@ -26,6 +26,7 @@
     'data': [
         'views/portal_templates.xml',
         'views/product_views.xml',
+        'views/sale_views.xml',
         'views/signup_templates.xml',
         'report/sale_report_templates.xml',
     ],
